@@ -1,0 +1,22 @@
+esphome:
+  name: tcr
+
+esp8266:
+  board: d1_wroom_02
+
+external_components:
+  - source:
+      type: github
+      path: components
+
+# Enable logging
+logger:
+
+i2c:
+  sda: GPIO04
+  scl: GPIO05
+  scan: true
+
+text_sensor:
+  - platform: tcr
+    name: "qr code"
